@@ -16,6 +16,7 @@ type Config struct {
 	ServerPort string `mapstructure:"PORT"`
 
 	TokenSecret    string        `mapstructure:"TOKEN_SECRET"`
+	RefreshSecret  string        `mapstructure:"REFRESH_SECRET"`
 	TokenExpiresIn time.Duration `mapstructure:"TOKEN_EXPIRED_IN"`
 	TokenMaxAge    int           `mapstructure:"TOKEN_MAXAGE"`
 }

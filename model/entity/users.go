@@ -15,3 +15,14 @@ type Users struct {
 	UpdatedAt time.Time
 	DeletedAt gorm.DeletedAt `gorm:"index"`
 }
+
+func (u *Users) BeforeCreate(tx *gorm.DB) error {
+	u.CreatedAt = time.Now()
+	u.UpdatedAt = time.Now()
+	return nil
+}
+
+func (u *Users) BeforeUpdate(tx *gorm.DB) error {
+	u.UpdatedAt = time.Now()
+	return nil
+}
